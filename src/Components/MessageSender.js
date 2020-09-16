@@ -11,6 +11,9 @@ function MessageSender() {
     const [imageUrl, setImageUrl] = useState('')
     const handleSubmit = e => {
        e.preventDefault();
+
+       setInput('')
+       setImageUrl('')
     }
     return (
         <div className="messageSender">

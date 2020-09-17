@@ -11,14 +11,15 @@ import VideoLibraryIcon from '@material-ui/icons/VideoLibrary';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import InsertInvitationIcon from '@material-ui/icons/InsertInvitation';
 import BookmarkIcon from '@material-ui/icons/Bookmark';
+import { useStateValue } from './StateProvider';
 
 function Sidebar() {
+    const [{user}, dispatch] = useStateValue();
     return (
         <div className="sidebar">
             <SidebarRow 
-                src="https://avatars2.githubusercontent.com/u/42527972?s=460&
-                    u=c6b5fb62eacf4ecb9d4932a7e7455313e17195fe&v=4"
-                title='Francis Pegenia' 
+                src={user.photoURL}
+                title={user.displayName} 
             />
             <SidebarRow 
                 Icon={SecurityIcon} 
